@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+
+  "name": "BuzzOff",
+  "description": "Let's kill BuzzFeed Together.",
+  "version": "0.0.1",
+
+  "permissions": [
+    "tabs",
+    "https://www.facebook.com/",
+    "http://www.facebook.com/",
+    "storage"
+  ], 
+  "icons": {
+    "128": "BuzzOff128.png"
+  },
+  "background": {
+    "scripts": ["bootstrap.js"],
+    "persistent": false
+  },
+  "page_action": {
+    "default_icon": "BuzzOff128.png",
+    "default_title": "BuzzOff",
+    "default_popup": "popup.html"
+  }
+
+}
