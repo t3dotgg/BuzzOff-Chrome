@@ -344,6 +344,22 @@ footer p {
     margin: 0;
 }
 
+.quoteleft .quoteright
+{
+    margin:1 em;
+}
+
+.quoteright
+{
+    float:right;
+    margin: 1.5 em;
+}
+
+.quoteleft
+{
+    float:left;
+}
+
 ::-moz-selection {
     text-shadow: none;
     background: #fcfcfc;
