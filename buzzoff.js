@@ -1,7 +1,7 @@
 function buzzoff(){
 
 	var stories = document.getElementsByClassName("_4-u2 mbm _5jmm _5pat _5v3q _5x16 _x72");
-	alert(stories);
+	//alert(stories);
 	var story;
 	for(var i=0; i < stories.length; i++){
 		story = stories[i];
@@ -9,17 +9,25 @@ function buzzoff(){
 	}
 
 	stories = document.getElementsByClassName("_4-u2 mbm _5jmm _5pat _5v3q _5x16");
-	alert(stories);
+	//alert(stories);
 	for(var j=0; i < stories.length; i++){
-		story = stories[i];
+		story = stories[j];
 		killStories(story);
 	}
 
 	stories = document.getElementsByClassName("timelineUnitContainer pagesTimelinePinpost");
-	alert(stories);
-	alert(stories[0].toString());
+	//alert(stories);
+	//alert(stories[0].toString());
 	for(var k=0; i < stories.length; i++){
-		story = stories[i];
+		story = stories[k];
+		killStories(story);
+	}
+	
+	stories = document.getElementsByClassName("timelineUnitContainer");
+	//alert(stories);
+	//alert(stories[0].toString());
+	for(var l;=0; i < stories.length; i++){
+		story = stories[l];
 		killStories(story);
 	}
 
