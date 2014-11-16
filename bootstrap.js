@@ -41,7 +41,7 @@ chrome.tabs.onUpdated.addListener(function(id, info, tab){
 
     if(tempBool){    
         chrome.pageAction.setIcon({tabId: tab.id, path: 'icon.png'});
-        chrome.tabs.executeScript(null, {"file": "buzzkill.js"});
+        chrome.tabs.executeScript(null, {"file": "buzzoff.js"});
     }
 
 });
