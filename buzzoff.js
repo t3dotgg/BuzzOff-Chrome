@@ -79,6 +79,36 @@ function killLink(item){
 
 }
 
+function killLink(item){
+
+	item.style.opacity = "0.0";
+	item.style.display = "None";
+
+}
+
+function addBlockedSite(url){
+
+	var urlList = localStorage.urls;
+	urlList.push(url);
+	localStorage.setItem("urls", urlList);
+
+}
+
+function removeBlockedSite(url){
+
+	var urlList = localStorage.urls;
+	var index = urlList.indexOf(url);
+	if (index > -1) {
+    	urlList.splice(index, 1);
+	}
+}
+
+function setupStorage(){
+	var urls = localStorage.urlList;
+	if(!urls){
+		urls = [ "www.buzzfeed.com", "www.upworthy.com", "elitedaily.com", "passitdown.co", "totalfratmove.com", "totalsororitymove.com", "postgradproblems.com", "www.playbuzz.com", "bzfd.it", "facebook.com/buzzfeed","thoughtcatalog.com", "upworthy.com" ];
+}
+
 
 buzzoff();
 document.addEventListener("scroll", buzzoff);
