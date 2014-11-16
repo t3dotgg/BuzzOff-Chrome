@@ -1,5 +1,13 @@
+var tempBool = new Boolean();
+tempBool = true;
+
+function checkForValidUrl(tabId, changeInfo, tab) {
+    chrome.pageAction.show(tabId);
+    activated[tabID] = false;
+};
+
 chrome.runtime.onInstalled.addListener(function(details) {
-    localStorage["BuzzOffBool"] = true;
+    localStorage["buzzoff_bool"] = true;
 });
 
 // Listen for any changes to the URL of any tab.
@@ -16,6 +24,14 @@ chrome.tabs.onUpdated.addListener(function(id, info, tab){
         return;
     }
 
+    if(!tempBool){    
+        chrome.pageAction.setIcon({tabId: tab.id, path: 'icongrey.png'});
+    }
+
+    if(tempBool){    
+        chrome.pageAction.setIcon({tabId: tab.id, path: 'icon.png'});
+    }
+
     if (tab.url.toLowerCase().indexOf("facebook.com/buzzfeed") !== -1){
         chrome.tabs.update(tab.id, {url: "http://www.facebook.com/"});
     }
@@ -23,8 +39,26 @@ chrome.tabs.onUpdated.addListener(function(id, info, tab){
     //Show PageAction
     chrome.pageAction.show(tab.id);
 
+    if(tempBool){    
+        chrome.pageAction.setIcon({tabId: tab.id, path: 'icon.png'});
+        chrome.tabs.executeScript(null, {"file": "buzzoff.js"});
+    }
+
 });
 
 chrome.pageAction.onClicked.addListener(function(tab) {
-    chrome.pageAction.show(tab.id);
+    
+    //chrome.pageAction.show(tab.id);
+
+    if(tempBool){    
+        chrome.pageAction.setIcon({tabId: tab.id, path: 'icongrey.png'});
+        //alert("not activated");
+    }else{
+        chrome.pageAction.setIcon({tabId: tab.id, path: 'icon.png'});
+        //alert("activated");
+    }
+
+    tempBool = !tempBool;
+
+
 });
