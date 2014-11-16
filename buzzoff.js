@@ -2,7 +2,7 @@
 
 function buzzoff(){
 
-	var urlList = [ "www.buzzfeed.com", "www.upworthy.com", "elitedaily.com", "passitdown.co", "totalfratmove.com", "totalsororitymove.com", "postgradproblems.com", "www.playbuzz.com", "bzfd.it", "facebook.com/buzzfeed","thoughtcatalog.com", "upworthy.com" ];
+	var urlList = localStorage.urls;
 	var stories = document.querySelectorAll("._4-u2");
 	var story;
 	for(var i=0; i < stories.length; i++){
@@ -104,12 +104,14 @@ function removeBlockedSite(url){
 }
 
 function setupStorage(){
-	var urls = localStorage.urlList;
-	if(!urls){
-		urls = [ "www.buzzfeed.com", "www.upworthy.com", "elitedaily.com", "passitdown.co", "totalfratmove.com", "totalsororitymove.com", "postgradproblems.com", "www.playbuzz.com", "bzfd.it", "facebook.com/buzzfeed","thoughtcatalog.com", "upworthy.com" ];
+	var urlList = localStorage.urls;
+	if(urlList == "undefined"){
+		alert("urlList is undefined!");
+		urlList = [ "www.buzzfeed.com", "www.upworthy.com", "elitedaily.com", "passitdown.co", "totalfratmove.com", "totalsororitymove.com", "postgradproblems.com", "www.playbuzz.com", "bzfd.it", "facebook.com/buzzfeed","thoughtcatalog.com", "upworthy.com" ];
+		localStorage.setItem("urls", urlList);
+	}
 }
 
-
+setupStorage();
 buzzoff();
 document.addEventListener("scroll", buzzoff);
-
