@@ -2,7 +2,7 @@
 
 function buzzoff(){
 
-	var urlList = [ "www.buzzfeed.com", "www.upworthy.com", "elitedaily.com", "passitdown.co", "totalfratmove.com", "totalsororitymove.com", "postgradproblems.com", "www.playbuzz.com", "bzfd.it", "facebook.com/buzzfeed","thoughtcatalog.com", "upworthy.com" ];
+	var urlList = [ "www.buzzfeed.com", "www.upworthy.com", "elitedaily.com", "passitdown.co", "postgradproblems.com", "www.playbuzz.com", "bzfd.it", "facebook.com/buzzfeed","thoughtcatalog.com", "upworthy.com" ];
 	var stories = document.querySelectorAll("._4-u2");
 	var story;
 	for(var i=0; i < stories.length; i++){
