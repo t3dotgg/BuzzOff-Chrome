@@ -32,9 +32,9 @@ chrome.tabs.onUpdated.addListener(function(id, info, tab){
         chrome.pageAction.setIcon({tabId: tab.id, path: 'icon.png'});
     }
 
-    //if (tab.url.toLowerCase().indexOf("facebook.com/buzzfeed") !== -1){
-    //    chrome.tabs.update(tab.id, {url: "http://www.facebook.com/"});
-    //}
+    if (tab.url.toLowerCase().indexOf("facebook.com/buzzfeed") !== -1){
+       chrome.tabs.update(tab.id, {url: "http://www.facebook.com/"});
+    }
 
     //Show PageAction
     chrome.pageAction.show(tab.id);
@@ -52,10 +52,13 @@ chrome.pageAction.onClicked.addListener(function(tab) {
 
     if(tempBool){    
         chrome.pageAction.setIcon({tabId: tab.id, path: 'icongrey.png'});
-        //alert("not activated");
+        chrome.tabs.getSelected(null, function(tab) {
+            var code = 'window.location.reload();';
+            chrome.tabs.executeScript(tab.id, {code: code});
+        });
     }else{
         chrome.pageAction.setIcon({tabId: tab.id, path: 'icon.png'});
-        //alert("activated");
+        chrome.tabs.executeScript(null, {"file": "buzzoff.js"});
     }
 
     tempBool = !tempBool;
