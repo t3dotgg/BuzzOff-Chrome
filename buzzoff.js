@@ -5,8 +5,13 @@ function buzzoff(){
 	alert(stories.length);
 	for(var i=0; i < stories.length; i++){
 		story = stories[i];
-		if (story.value.toString().indexOf("buzzfeed.com") !== -1){
-			killStories(story);
+		var titles = story.querySelectorAll("._6lz, ._6mb, .ellipsis");
+		alert(titles.length);
+		for(var j=0; j < titles.length; j++){
+
+			if (title[j].value.toString().indexOf("buzzfeed.com") !== -1){
+				killStories(story);
+			}
 		}
 	}
 
