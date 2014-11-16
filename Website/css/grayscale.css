@@ -165,21 +165,6 @@ a:focus {
     font-size: 18px;
 }
 
-.section-hackrpi {
-    display: table;
-    width: 100%;
-    height: auto;
-    padding: 100px 0;
-    text-align: center;
-    color: #fff;
-    background: url(../img/empac.jpg) no-repeat bottom center scroll;
-    background-color: #000;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-}
-
 @media(min-width:767px) {
     .intro {
         height: 100%;
@@ -286,11 +271,24 @@ a:focus {
     -o-background-size: cover;
 }
 
-.review-section {
+.empac-section {
     width: 100%;
+    margin-top: 5%;
     padding: 50px 0;
     color: #fff;
-    background-color: #3a3a3a;
+    background: url(../img/empac.jpg) no-repeat center center scroll;
+    background-color: #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+
+.review-section {
+    width: 100%;
+    margin-bottom: 10%;
+    color: #fff;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -411,6 +409,11 @@ img::selection {
 
 img::-moz-selection {
     background: 0 0;
+}
+
+body {
+    webkit-tap-highlight-color: rgba(255,255,255,.2);
+}: 0 0;
 }
 
 body {
