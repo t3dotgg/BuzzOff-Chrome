@@ -5,13 +5,7 @@ function buzzoff(){
 	alert(stories.length);
 	for(var i=0; i < stories.length; i++){
 		story = stories[i];
-		var titles = story.querySelectorAll("._6lz, ._6mb, .ellipsis");
-		alert(titles.length);
-		for(var j=0; j < titles.length; j++){
-
-			if (title[j].value.toString().indexOf("buzzfeed.com") !== -1){
-				killStories(story);
-			}
+		killItems(story);
 		}
 	}
 
@@ -40,7 +34,35 @@ function buzzoff(){
 
 }
 
-function killStories(item){
+
+
+function killItems(item){
+var links = item.getElementsByTagName("a");
+for(var k=0; k < links.length; k++){
+var link = links[k];
+var href = link.href.toLowerCase();
+// decide which type of link it is
+var linkType = null;
+if (href.indexOf("facebook.com/buzzfeed") !== -1 ){
+      linkType = "page link";
+    }
+else if (href.indexOf("bzfd.it") !== -1 ){
+      linkType = "shortened link";
+    }
+else if (href.indexOf("buzzfeed.com") !== -1 ){
+      linkType = "regular link";
+    }
+// kill the story that contains this link
+if(linkType !== null){
+      killLink(item);
+    }
+  }
+
+}
+
+
+
+function killLink(item){
 
 	// var post;
 	// post = item;
@@ -56,6 +78,7 @@ function killStories(item){
 	//}
 }
 
+alert("you piece of fucking shit fucking work you cock");
 
 buzzoff();
 
