@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "BuzzOff",
-  "description": "Let's kill BuzzFeed Together.",
+  "description": "Let's kill BuzzFeed and other clickbait together.",
   "version": "0.3.0",
 
   "permissions": [
