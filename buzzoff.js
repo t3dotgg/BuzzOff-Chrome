@@ -2,7 +2,6 @@ function buzzoff(){
 
 	var stories = document.querySelectorAll("._4-u2");
 	var story;
-	alert(stories.length);
 	for(var i=0; i < stories.length; i++){
 		story = stories[i];
 		killItems(story);
@@ -32,7 +31,7 @@ function buzzoff(){
 	// 	killStories(story);
 	// }
 
-}
+//}
 
 
 
@@ -68,7 +67,7 @@ function killLink(item){
 	// post = item;
 	// for(var i=0; i < elems.length; i++){
 	//     post = elems[i];
-	    alert(item.innerHTML);
+	    //alert(item.innerHTML);
 	    
 	   //if (item.value.toString().indexOf("buzzfeed.com") !== -1){
 	    	item.style.opacity = "0.0";
@@ -78,7 +77,9 @@ function killLink(item){
 	//}
 }
 
-alert("you piece of fucking shit fucking work you cock");
+
+
+//alert("you piece of fucking shit fucking work you cock");
 
 buzzoff();
 
