@@ -25,11 +25,11 @@ chrome.tabs.onUpdated.addListener(function(id, info, tab){
     }
 
     if(!tempBool){    
-        chrome.pageAction.setIcon({tabId: tab.id, path: 'icongrey.png'});
+        chrome.pageAction.setIcon({tabId: tab.id, path: 'images/icongrey.png'});
     }
 
     if(tempBool){    
-        chrome.pageAction.setIcon({tabId: tab.id, path: 'icon.png'});
+        chrome.pageAction.setIcon({tabId: tab.id, path: 'images/icon.png'});
     }
 
     if (tab.url.toLowerCase().indexOf("facebook.com/buzzfeed") !== -1){
@@ -40,7 +40,7 @@ chrome.tabs.onUpdated.addListener(function(id, info, tab){
     chrome.pageAction.show(tab.id);
 
     if(tempBool){    
-        chrome.pageAction.setIcon({tabId: tab.id, path: 'icon.png'});
+        chrome.pageAction.setIcon({tabId: tab.id, path: 'images/icon.png'});
         chrome.tabs.executeScript(null, {"file": "buzzoff.js"});
     }
 
@@ -51,13 +51,13 @@ chrome.pageAction.onClicked.addListener(function(tab) {
     //chrome.pageAction.show(tab.id);
 
     if(tempBool){    
-        chrome.pageAction.setIcon({tabId: tab.id, path: 'icongrey.png'});
+        chrome.pageAction.setIcon({tabId: tab.id, path: 'images/icongrey.png'});
         chrome.tabs.getSelected(null, function(tab) {
             var code = 'window.location.reload();';
             chrome.tabs.executeScript(tab.id, {code: code});
         });
     }else{
-        chrome.pageAction.setIcon({tabId: tab.id, path: 'icon.png'});
+        chrome.pageAction.setIcon({tabId: tab.id, path: 'images/icon.png'});
         chrome.tabs.executeScript(null, {"file": "buzzoff.js"});
     }
 
