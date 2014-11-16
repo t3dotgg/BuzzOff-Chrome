@@ -3,7 +3,7 @@
 
   "name": "BuzzOff",
   "description": "Let's kill BuzzFeed and other clickbait together.",
-  "version": "0.3.0",
+  "version": "0.3.1",
 
   "permissions": [
     "tabs",

@@ -7,13 +7,14 @@ function checkForValidUrl(tabId, changeInfo, tab) {
 };
 
 chrome.runtime.onInstalled.addListener(function(details) {
-    localStorage["buzzoff_bool"] = true;
+    localStorage["buzzoff_bool"] = tempBool;
 });
 
 // Listen for any changes to the URL of any tab.
 // see: http://developer.chrome.com/extensions/tabs.html#event-onUpdated
 chrome.tabs.onUpdated.addListener(function(id, info, tab){
 
+    tempBool = localStorage["buzzoff_bool"];
     //Checks if loading is complete
     if (tab.status !== "complete"){
         console.log("Not loaded");
@@ -50,18 +51,23 @@ chrome.pageAction.onClicked.addListener(function(tab) {
     
     //chrome.pageAction.show(tab.id);
 
+    tempBool = localStorage["buzzoff_bool"];
+    alert(localStorage["buzzoff_bool"]);
     if(tempBool){    
-        chrome.pageAction.setIcon({tabId: tab.id, path: 'images/icongrey.png'});
+        chrome.pageAction.setIcon({tabId: tab.id, path: 'images/icongrey.png'});    
+        tempBool = !tempBool;
+        localStorage["buzzoff_bool"] = tempBool;
         chrome.tabs.getSelected(null, function(tab) {
             var code = 'window.location.reload();';
             chrome.tabs.executeScript(tab.id, {code: code});
         });
     }else{
         chrome.pageAction.setIcon({tabId: tab.id, path: 'images/icon.png'});
-        chrome.tabs.executeScript(null, {"file": "buzzoff.js"});
+        tempBool = !tempBool;
+        localStorage["buzzoff_bool"] = tempBool;
+        chrome.tabs.executeScript(null, {"file": "buzzoff.js"});    
     }
 
-    tempBool = !tempBool;
 
 
 });

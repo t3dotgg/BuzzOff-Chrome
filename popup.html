@@ -8,12 +8,37 @@
         min-height: 100px;
         overflow-x: hidden;
       }
+      .PowerButton {
+          border-right: solid #5d5d5d;
+          border-width: 3px;
+      }
+      .OtherIO {
+          border-left: solid #ffffff;
+          border-width: 3px;
+      }
     </style>
 
     <script src="popup.js"></script>
+    <link rel="stylesheet" type="text/css" href="popup.css">
   </head>
   <body>
-  <h1><center>Hi</h1></center>
+  <table>
+    <tr>
+      <td >
+      <div class="PowerButton">
+        <img id="PowerButton" src="images/PowerOff50.png" >
+      </div>
+      </td>
+      <td class="OtherIO">
+        <form action="popup.html">
+          <br>
+          <input type="text" name="AddKeyWord" value="Add keyword or URL here">
+          <br>
+          <input type="text" name="RemoveKeyWord" value="Remove keyword or URL here">
+          <br><br>
+          <center><input type="submit" value="Submit"></center>
+         </form>
+      </td>
   </body>
 </html>
 

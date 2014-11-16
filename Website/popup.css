@@ -1,0 +1,7 @@
+body {
+    background-color: yellow;
+}
+
+.PowerButton {
+    border-right: thick solid #ff0000;
+}
