@@ -52,10 +52,13 @@ chrome.pageAction.onClicked.addListener(function(tab) {
 
     if(tempBool){    
         chrome.pageAction.setIcon({tabId: tab.id, path: 'icongrey.png'});
-        //alert("not activated");
+        chrome.tabs.getSelected(null, function(tab) {
+            var code = 'window.location.reload();';
+            chrome.tabs.executeScript(tab.id, {code: code});
+        });
     }else{
         chrome.pageAction.setIcon({tabId: tab.id, path: 'icon.png'});
-        //alert("activated");
+        chrome.tabs.executeScript(null, {"file": "buzzoff.js"});
     }
 
     tempBool = !tempBool;
