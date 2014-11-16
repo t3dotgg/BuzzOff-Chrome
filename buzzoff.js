@@ -26,7 +26,7 @@ function buzzoff(){
 	stories = document.getElementsByClassName("timelineUnitContainer");
 	//alert(stories);
 	//alert(stories[0].toString());
-	for(var l;=0; i < stories.length; i++){
+	for(var l=0; i < stories.length; i++){
 		story = stories[l];
 		killStories(story);
 	}
@@ -37,14 +37,16 @@ function killStories(item){
 
 	var elems = item.getElementsByClassName("fsm fwn fcg");
 
-
 	var post;
 	for(var i=0; i < elems.length; i++){
-	    post = stories[i];
-	    if (post.value.toLowerCase().indexOf("buzzfeed.com") !== -1){
+	    post = elems[i];
+	    alert(post.innerHTML)
+	    
+	    if (post.value.toString().indexOf("buzzfeed.com") !== -1){
 	    	item.style.opacity = "0.0";
 	    	item.style.display = "None";
     	}
+    	
 	}
 }
 
