@@ -258,12 +258,24 @@ a:focus {
     padding-top: 100px;
 }
 
+
 .download-section {
     width: 100%;
     padding: 50px 0;
     color: #fff;
     background: url(../img/downloads-bg.jpg) no-repeat center center scroll;
     background-color: #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.review-section {
+    width: 100%;
+    padding: 50px 0;
+    color: #fff;
+    background-color: #3a3a3a;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -344,20 +356,26 @@ footer p {
     margin: 0;
 }
 
-.quoteleft .quoteright
+
+.left
 {
-    margin:1 em;
+    border:0px;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+    display: block;
+    float: left;
 }
 
-.quoteright
+
+.right
 {
+    border:0px;
+    padding-left: 1em;
+    margin-left: 1em;
     float:right;
-    margin: 1.5 em;
-}
-
-.quoteleft
-{
-    float:left;
+    display: inline-block;
 }
 
 ::-moz-selection {
