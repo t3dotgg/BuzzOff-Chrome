@@ -1,10 +1,14 @@
+
+
 function buzzoff(){
+
+	var urlList = $.getJSON('block.JSON');
 
 	var stories = document.querySelectorAll("._4-u2");
 	var story;
 	for(var i=0; i < stories.length; i++){
 		story = stories[i];
-		killItems(story);
+		killList(story, urlList);
 		}
 	}
 
@@ -30,7 +34,30 @@ function killItems(item){
 	      killLink(item);
 	    }
 	  }
-	
+
+}
+
+function killList(urls, item)
+{
+	var links = item.getElementsByTagName("a");
+	var linkfound= false;
+	var i=0;
+	alert(urls.length)
+	while (linkfound === false)
+	{
+		alert(urls[i]);
+		if (i===urls.length) break;
+		if (item.href.indexOf(urls[i]) !== -1 ){
+		    linkfound=true;
+		    } 
+		 i++;
+	}
+
+	if(linkfound)
+	{
+		killLink(item);
+	}
+
 }
 
 
@@ -45,3 +72,4 @@ function killLink(item){
 
 buzzoff();
 document.addEventListener("scroll", buzzoff);
+
