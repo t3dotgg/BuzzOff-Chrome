@@ -262,6 +262,7 @@ a:focus {
 .download-section {
     width: 100%;
     padding: 50px 0;
+    margin-bottom: -20%;
     color: #fff;
     background: url(../img/downloads-bg.jpg) no-repeat center center scroll;
     background-color: #000;
@@ -271,11 +272,24 @@ a:focus {
     -o-background-size: cover;
 }
 
-.review-section {
+.empac-section {
     width: 100%;
+    margin-top: 5%;
     padding: 50px 0;
     color: #fff;
-    background-color: #3a3a3a;
+    background: url(../img/empac.jpg) no-repeat center center scroll;
+    background-color: #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+
+.review-section {
+    width: 100%;
+    margin-bottom: 3em;
+    color: #fff;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
