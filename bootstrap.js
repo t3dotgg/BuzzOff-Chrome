@@ -32,9 +32,9 @@ chrome.tabs.onUpdated.addListener(function(id, info, tab){
         chrome.pageAction.setIcon({tabId: tab.id, path: 'icon.png'});
     }
 
-    if (tab.url.toLowerCase().indexOf("facebook.com/buzzfeed") !== -1){
-        chrome.tabs.update(tab.id, {url: "http://www.facebook.com/"});
-    }
+    //if (tab.url.toLowerCase().indexOf("facebook.com/buzzfeed") !== -1){
+    //    chrome.tabs.update(tab.id, {url: "http://www.facebook.com/"});
+    //}
 
     //Show PageAction
     chrome.pageAction.show(tab.id);
