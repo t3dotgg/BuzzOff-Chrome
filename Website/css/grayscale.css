@@ -65,7 +65,7 @@ a:focus {
     margin-bottom: 0;
     border-bottom: 1px solid rgba(255,255,255,.3);
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: Lato,"Helvetica Neue",Helvetica,Arial,sans-serif;
     background-color: #000;
 }
 
@@ -144,7 +144,7 @@ a:focus {
     padding: 100px 0;
     text-align: center;
     color: #fff;
-    background: url(../img/intro-bg.jpg) no-repeat bottom center scroll;
+    background: url(../img/introbgdesk.jpg) no-repeat bottom center scroll;
     background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -258,12 +258,38 @@ a:focus {
     padding-top: 100px;
 }
 
+
 .download-section {
     width: 100%;
     padding: 50px 0;
     color: #fff;
     background: url(../img/downloads-bg.jpg) no-repeat center center scroll;
     background-color: #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.empac-section {
+    width: 100%;
+    margin-top: 10%;
+    padding: 50px 0;
+    color: #fff;
+    background: url(../img/empac.jpg) no-repeat center center scroll;
+    background-color: #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+
+.review-section {
+    width: 100%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    color: #fff;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -344,6 +370,28 @@ footer p {
     margin: 0;
 }
 
+
+.left
+{
+    border:0px;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+    display: block;
+    float: left;
+}
+
+
+.right
+{
+    border:0px;
+    padding-left: 1em;
+    margin-left: 1em;
+    float:right;
+    display: inline-block;
+}
+
 ::-moz-selection {
     text-shadow: none;
     background: #fcfcfc;
@@ -362,6 +410,11 @@ img::selection {
 
 img::-moz-selection {
     background: 0 0;
+}
+
+body {
+    webkit-tap-highlight-color: rgba(255,255,255,.2);
+}: 0 0;
 }
 
 body {
