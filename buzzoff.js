@@ -88,8 +88,11 @@ function killLink(item){
 
 function addBlockedSite(url){
 
+	var url_str = String(url)
 	var urlList = localStorage.urls;
-	urlList.push(url);
+	//alert("urlList in add function before add " + urlList);
+	urlList = urlList.concat(url_str);
+	//alert("urlList in add function after add " + urlList);
 	localStorage.setItem("urls", urlList);
 
 }
@@ -105,13 +108,15 @@ function removeBlockedSite(url){
 
 function setupStorage(){
 	var urlList = localStorage.urls;
-	if(urlList == "undefined"){
-		alert("urlList is undefined!");
+	if(urlList === undefined){
 		urlList = [ "www.buzzfeed.com", "www.upworthy.com", "elitedaily.com", "passitdown.co", "totalfratmove.com", "totalsororitymove.com", "postgradproblems.com", "www.playbuzz.com", "bzfd.it", "facebook.com/buzzfeed","thoughtcatalog.com", "upworthy.com" ];
 		localStorage.setItem("urls", urlList);
 	}
 }
 
 setupStorage();
+addBlockedSite(" www.TEST_URL.com ")
+alert("localStorage.urls after url is added " + localStorage.urls);
 buzzoff();
 document.addEventListener("scroll", buzzoff);
+

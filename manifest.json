@@ -15,7 +15,7 @@
     "128": "images/BuzzOff128.png"
   },
   "background": {
-    "scripts": ["bootstrap.js"],
+    "scripts": ["bootstrap.js", "buzzoff.js"],
     "persistent": false
   },
   "page_action": {

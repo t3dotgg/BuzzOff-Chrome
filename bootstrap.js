@@ -7,7 +7,7 @@ function checkForValidUrl(tabId, changeInfo, tab) {
 };
 
 chrome.runtime.onInstalled.addListener(function(details) {
-    localStorage.setItem("buzzoff_bool") = tempBool;
+    localStorage.setItem("buzzoff_bool", tempBool);
      if(tempBool=== false){    
         chrome.pageAction.setIcon({tabId: tab.id, path: 'images/icongrey.png'});
     }
