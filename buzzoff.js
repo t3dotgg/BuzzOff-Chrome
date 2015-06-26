@@ -1,15 +1,16 @@
 
 
-function buzzoff(){
-
+//runs buzzoff function every time tab is updated
+chrome.tabs.onUpdated.addEventListener(function(){
 	var urlList = [ "www.buzzfeed.com", "www.upworthy.com", "elitedaily.com", "passitdown.co", "postgradproblems.com", "www.playbuzz.com", "bzfd.it", "facebook.com/buzzfeed","thoughtcatalog.com", "upworthy.com" ];
-	var stories = document.querySelectorAll("._4-u2");
+	var stories = document.querySelectorAll(".5jmm");
 	var story;
 	for(var i=0; i < stories.length; i++){
 		story = stories[i];
 		killList(urlList, story);
 		}
 	}
+});
 
 //Creates array of stories and checks for blacklisted urls, sends blacklisted urls to killLink
 function killItems(item){
@@ -79,7 +80,7 @@ function killLink(item){
 
 }
 
-
-buzzoff();
-document.addEventListener("scroll", buzzoff);
+//no longer need this if using tabs.onUpdated
+//buzzoff();
+//document.addEventListener("scroll", buzzoff);
 
