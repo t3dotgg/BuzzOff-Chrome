@@ -1,7 +1,10 @@
 
-
-//runs buzzoff function every time tab is updated
+//Fires whenever tab is updated
 chrome.tabs.onUpdated.addEventListener(function(){
+	buzzoff();
+});
+
+function buzzoff(){
 	var urlList = [ "www.buzzfeed.com", "www.upworthy.com", "elitedaily.com", "passitdown.co", "postgradproblems.com", "www.playbuzz.com", "bzfd.it", "facebook.com/buzzfeed","thoughtcatalog.com", "upworthy.com" ];
 	var stories = document.querySelectorAll(".5jmm");
 	var story;
@@ -10,7 +13,7 @@ chrome.tabs.onUpdated.addEventListener(function(){
 		killList(urlList, story);
 		}
 	}
-});
+}
 
 //Creates array of stories and checks for blacklisted urls, sends blacklisted urls to killLink
 function killItems(item){
@@ -36,6 +39,7 @@ function killItems(item){
 	  }
 
 }
+
 function killList(urls, item){
 	var links = item.getElementsByTagName("a");
 	for(var k=0; k < links.length; k++){
@@ -55,23 +59,6 @@ function killList(urls, item){
 
 }
 
-// function killList(urls, item)
-// {
-// 	var links = item.getElementsByTagName("a");
-// 	var linkfound= false;
-// 	var href = links.href.toLowerCase();
-// 	var i=0;
-// 	alert(urls.length);
-// 	for(var k=0; k < urls.length; k++){
-// 		if (href.indexOf(urls[i]) !== -1 ){
-// 			killLink(item);
-// 			return;
-// 		}
-// 	}
-
-// }
-
-
 //Hides the story containing the link with a blacklisted string
 function killLink(item){
 
@@ -79,8 +66,3 @@ function killLink(item){
 	item.style.display = "None";
 
 }
-
-//no longer need this if using tabs.onUpdated
-//buzzoff();
-//document.addEventListener("scroll", buzzoff);
-
