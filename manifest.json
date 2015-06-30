@@ -15,12 +15,13 @@
     "128": "images/BuzzOff128.png"
   },
   "background": {
-    "scripts": ["bootstrap.js"],
+    "scripts": ["js/bootstrap.js"],
     "persistent": false
   },
   "page_action": {
     "default_icon": "images/icon.png",
-    "default_title": "BuzzOff"
+    "default_title": "BuzzOff",
+    "default_popup": "popup.html"
   }
 
 }
