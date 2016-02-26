@@ -12,7 +12,6 @@ function buzzoff(){
 		story = stories[i];
 		killList(urlList, story);
 		}
-	}
 }
 
 //Creates array of stories and checks for blacklisted urls, sends blacklisted urls to killLink
