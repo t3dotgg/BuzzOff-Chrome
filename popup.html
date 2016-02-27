@@ -18,8 +18,7 @@
       }
     </style>
 
-    <script src="popup.js"></script>
-    <link rel="stylesheet" type="text/css" href="popup.css">
+    <script src="js/popup.js"></script>
   </head>
   <body>
   <table>
@@ -30,13 +29,13 @@
       </div>
       </td>
       <td class="OtherIO">
-        <form action="popup.html">
+        <form>
           <br>
-          <input type="text" name="AddKeyWord" value="Add keyword or URL here">
+          <input type="text" id="AddKeyWord" value="Add keyword or URL here">
           <br>
-          <input type="text" name="RemoveKeyWord" value="Remove keyword or URL here">
+          <input type="text" id="RemoveKeyWord" value="Remove keyword or URL here">
           <br><br>
-          <center><input type="submit" value="Submit"></center>
+          <center><input type="submit" value="Submit" id="popup_btn"></center>
          </form>
       </td>
   </body>

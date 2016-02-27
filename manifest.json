@@ -21,7 +21,8 @@
   "page_action": {
     "default_icon": "images/icon.png",
     "default_title": "BuzzOff",
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "scripts": "js/popup.js"
   }
 
 }
